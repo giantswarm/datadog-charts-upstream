@@ -353,3 +353,18 @@ Returns provider-specific env vars if any
   value: {{ include "provider-kind" . }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Return Kubelet CA path inside Agent containers
+*/}}
+{{- define "datadog.kubelet.mountPath" -}}
+{{- if .Values.datadog.kubelet.agentCAPath -}}
+{{- .Values.datadog.kubelet.agentCAPath -}}
+{{- else if .Values.datadog.kubelet.hostCAPath -}}
+{{- if eq .Values.targetSystem "windows" -}}
+C:/var/kubelet-ca/{{ base .Values.datadog.kubelet.hostCAPath }}
+{{- else -}}
+/var/run/kubelet-ca/{{ base .Values.datadog.kubelet.hostCAPath }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
