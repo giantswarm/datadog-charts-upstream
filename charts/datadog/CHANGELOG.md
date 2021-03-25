@@ -1,5 +1,10 @@
 # Datadog changelog
 
+## 2.11.0
+
+* Bump Agent version to `7.27.0`.
+* Support configuring advanced openmetrics check parameters via `datadog.prometheusScrape.additionalConfigs`.
+
 ## 2.10.6
 
 * Add provider labels on pods, warning on dogstatsd with UDS on GKE Autopilot.
