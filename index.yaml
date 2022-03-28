@@ -3,6 +3,38 @@ entries:
   datadog:
   - apiVersion: v1
     appVersion: "7"
+    created: "2022-03-28T15:34:39.289698212Z"
+    dependencies:
+    - condition: clusterAgent.metricsProvider.useDatadogMetrics
+      name: datadog-crds
+      repository: https://helm.datadoghq.com
+      tags:
+      - install-crds
+      version: 0.4.7
+    - condition: datadog.kubeStateMetricsEnabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 2.13.2
+    description: Datadog Agent
+    digest: 791a06019317923bf9aaf482e631268f8b26888f787511caf7ec53c779403062
+    home: https://www.datadoghq.com
+    icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
+    keywords:
+    - monitoring
+    - alerting
+    - metric
+    maintainers:
+    - email: support@datadoghq.com
+      name: Datadog
+    name: datadog
+    sources:
+    - https://app.datadoghq.com/account/settings#agent/kubernetes
+    - https://github.com/DataDog/datadog-agent
+    urls:
+    - https://github.com/giantswarm/datadog-charts-upstream/releases/download/datadog-2.30.19/datadog-2.30.19.tgz
+    version: 2.30.19
+  - apiVersion: v1
+    appVersion: "7"
     created: "2021-04-07T14:51:22.573200127Z"
     dependencies:
     - condition: clusterAgent.metricsProvider.useDatadogMetrics
@@ -2790,6 +2822,28 @@ entries:
     - https://github.com/DataDog/helm-charts/releases/download/datadog-2.4.0/datadog-2.4.0.tgz
     version: 2.4.0
   datadog-crds:
+  - apiVersion: v1
+    appVersion: "1"
+    created: "2022-03-28T15:34:39.439690857Z"
+    description: Datadog Kubernetes CRDs chart
+    digest: ebedba543012343746589551dd9a8291ca5c9a75429b715b59ea28ddeb36093a
+    home: https://www.datadoghq.com
+    icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
+    keywords:
+    - monitoring
+    - alerting
+    - metric
+    maintainers:
+    - email: support@datadoghq.com
+      name: Datadog
+    name: datadog-crds
+    sources:
+    - https://app.datadoghq.com/account/settings#agent/kubernetes
+    - https://github.com/DataDog/datadog-operator
+    - https://docs.datadoghq.com/agent/cluster_agent/external_metrics
+    urls:
+    - https://github.com/giantswarm/datadog-charts-upstream/releases/download/datadog-crds-0.4.7/datadog-crds-0.4.7.tgz
+    version: 0.4.7
   - apiVersion: v2
     appVersion: "1"
     created: "2021-02-25T18:08:26.541048641Z"
@@ -2860,6 +2914,34 @@ entries:
     - https://github.com/DataDog/helm-charts/releases/download/datadog-crds-0.1.0/datadog-crds-0.1.0.tgz
     version: 0.1.0
   datadog-operator:
+  - apiVersion: v2
+    appVersion: 0.7.2
+    created: "2022-03-28T15:34:39.572103703Z"
+    dependencies:
+    - condition: installCRDs
+      name: datadog-crds
+      repository: https://helm.datadoghq.com
+      tags:
+      - install-crds
+      version: =0.4.5
+    description: Datadog Operator
+    digest: ab35bc9cc28ae60dfc87ca08a721c09570b2eef82992932abd3617589b2f07c2
+    home: https://www.datadoghq.com
+    icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
+    keywords:
+    - monitoring
+    - alerting
+    - metric
+    maintainers:
+    - email: support@datadoghq.com
+      name: Datadog
+    name: datadog-operator
+    sources:
+    - https://app.datadoghq.com/account/settings#agent/kubernetes
+    - https://github.com/DataDog/datadog-agent
+    urls:
+    - https://github.com/giantswarm/datadog-charts-upstream/releases/download/datadog-operator-0.7.10/datadog-operator-0.7.10.tgz
+    version: 0.7.10
   - apiVersion: v2
     appVersion: 0.5.0
     created: "2021-03-15T18:36:46.541616562Z"
@@ -3140,7 +3222,48 @@ entries:
     urls:
     - https://github.com/DataDog/helm-charts/releases/download/datadog-operator-0.1.0/datadog-operator-0.1.0.tgz
     version: 0.1.0
+  extendeddaemonset:
+  - apiVersion: v1
+    appVersion: v0.7.0
+    created: "2022-03-28T15:34:39.782099185Z"
+    description: Extended Daemonset Controller
+    digest: c9ae01ec79ee077adc3e81c6efd2e221d4a8390636bb601060c69217ef84ac13
+    home: https://www.datadoghq.com
+    icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
+    keywords:
+    - monitoring
+    - alerting
+    - metric
+    maintainers:
+    - email: support@datadoghq.com
+      name: Datadog
+    name: extendeddaemonset
+    sources:
+    - https://github.com/DataDog/extendeddaemonset
+    urls:
+    - https://github.com/giantswarm/datadog-charts-upstream/releases/download/extendeddaemonset-v0.2.2/extendeddaemonset-v0.2.2.tgz
+    version: v0.2.2
   synthetics-private-location:
+  - apiVersion: v2
+    appVersion: 1.21.0
+    created: "2022-03-28T15:34:39.914915134Z"
+    description: Datadog Synthetics Private Location
+    digest: 82074b157b7afe85c0e404343a1cc6169f93ea8cf42cd2da150246085d80ab39
+    home: https://www.datadoghq.com
+    icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
+    keywords:
+    - monitoring
+    - synthetics
+    maintainers:
+    - email: support@datadoghq.com
+      name: Datadog
+    name: synthetics-private-location
+    sources:
+    - https://docs.datadoghq.com/synthetics/private_locations
+    - https://app.datadoghq.com/synthetics/settings/private-locations
+    urls:
+    - https://github.com/giantswarm/datadog-charts-upstream/releases/download/synthetics-private-location-0.13.2/synthetics-private-location-0.13.2.tgz
+    version: 0.13.2
   - apiVersion: v2
     appVersion: 1.4.0
     created: "2020-11-16T14:31:25.929943314Z"
@@ -3181,4 +3304,4 @@ entries:
     urls:
     - https://github.com/DataDog/helm-charts/releases/download/synthetics-private-location-0.1.0/synthetics-private-location-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-07T14:51:22.574035217Z"
+generated: "2022-03-28T15:34:39.922228975Z"
