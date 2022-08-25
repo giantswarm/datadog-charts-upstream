@@ -17,7 +17,7 @@ jobs:
       - name: Sync datadog from upstream
         uses: giantswarm/subtree-util@v0.1.1
         with:
-          target_github_token: ${{ secrets.ARCHITECT_BOT_GITHUB_REPO_SYNC_TOKEN }}
+          target_github_token: ${{ secrets.ARCHITECT_GITHUB_REPO_SYNC_TOKEN }}
           target_repository: giantswarm/datadog-app
           target_path: helm/datadog
           source_tag_wildcard: "datadog[0-9]-*"
