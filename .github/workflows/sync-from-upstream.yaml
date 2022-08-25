@@ -20,5 +20,5 @@ jobs:
           target_github_token: ${{ secrets.ARCHITECT_GITHUB_REPO_SYNC_TOKEN }}
           target_repository: giantswarm/datadog-app
           target_path: helm/datadog
-          source_tag_wildcard: "datadog[0-9]-*"
+          source_tag_wildcard: "datadog-[0-9]*"
           source_path: charts/datadog
