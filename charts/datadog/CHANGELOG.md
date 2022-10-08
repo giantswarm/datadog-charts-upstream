@@ -1,5 +1,29 @@
 # Datadog changelog
 
+## 3.1.9
+
+* Add `faccessat` to system-probe seccomp profile.
+
+## 3.1.8
+
+* Add `clone3` and `rseq` to system-probe seccomp profile.
+
+## 3.1.7
+
+* Fix the configuration of the default seccomp profile for system-probe
+
+## 3.1.6
+
+* Fix usage of `generate-security-context` helper.
+
+## 3.1.5
+
+* Use `securityContext.seccompProfile` instead of annotations for system-probe on kubernetes 1.19+.
+
+## 3.1.4
+
+* Default "Agent" and "Cluster-Agent" image tag to `7.39.1`.
+
 ## 3.1.3
 
 * Add `datadog.helmCheck.valuesAsTags` option to collect helm values and use them as tags.
