@@ -12,7 +12,7 @@ jobs:
       charts: ${{ steps.list-changed.outputs.changed }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - name: Set up Helm
@@ -45,7 +45,7 @@ jobs:
       - changed
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - uses: actions/setup-python@v4
@@ -62,7 +62,7 @@ jobs:
       - changed
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - name: Run helm-docs
@@ -87,7 +87,7 @@ jobs:
           - v1.24.2
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - name: Add datadog helm repo
@@ -116,7 +116,7 @@ jobs:
           - v1.24.2
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - name: Create kind ${{ matrix.k8s }} cluster
